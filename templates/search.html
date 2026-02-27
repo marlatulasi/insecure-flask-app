@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Search Posts</h2>
+<form method="post">
+  <input name="query"><br>
+  <input type="submit" value="Search">
+</form>
+{% if results %}
+  <h3>Results:</h3>
+  {% for r in results %}
+    <div><strong>{{ r.username }}</strong>: {{ r.content }}</div>
+  {% endfor %}
+{% endif %}
+{% endblock %}

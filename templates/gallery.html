@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Gallery</h2>
+{% for u in users %}
+  <div>
+    <p>{{ u.username }}</p>
+    <img src="{{ url_for('static', filename='uploads/' + u.image) }}" width="100">
+  </div>
+{% endfor %}
+{% endblock %}
